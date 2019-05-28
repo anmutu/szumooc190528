@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+	<title>{% block title %}深圳大学慕课网首页{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% block custom_css %}{% endblock %}
+    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}" type="text/javascript"></script>
+
+</head>
+<body>
+<section class="headerwrap ">
+    <header>
+		<div  class=" header">
+{# 			<div class="top">#}
+{#				<div class="wp">#}
+{#					<div class="fl"><p>联系方式：<b>12345678;</b></p></div>#}
+{#			</div>#}
+
+            <div class="middle">
+                <div class="wp">
+                    <a href="/"><img class="fl" style="margin:15px" src="{% static 'images/szulogo.png' %}"/></a>
+                </div>
+            </div>
+            
+			<nav>
+				<div class="nav">
+					<div class="wp">
+					</div>
+				</div>
+			</nav>
+            
+			</div>
+    </header>
+</section>
+<!--crumbs start-->
+{% block custom_bread %}
+<section>
+	<div class="wp">
+		<ul  class="crumbs">
+			<li><a href="/">首页</a>></li>
+		</ul>
+	</div>
+</section>
+{% endblock %}
+{% block content %}
+{% endblock %}
+<footer>
+		<div class="footer">
+			<div class="wp">
+				<ul class="cont">
+{#					<li class="logo"><a href=""><img src="{% static 'images/szulogo.png' %}"/></a></li>#}
+{#					<li class="code"><img src="{% static 'images/author.png' %}"/><p class="center"></p></li>#}
+{#					<li class="code"><img class="fl" src="{% static 'images/zmfei4.jpg' %}"/><p class="tell"></p></li>#}
+				</ul>
+
+			</div>
+			<p class="line"></p>
+			<div class="wp clear">
+                <span class="fl"> 2019 深圳大学慕课网 保留所有权利</span>
+                <span class="fr">copyright ? 2019 ICP备案证书号：ICP备xxxxx号-1</span>
+			</div>
+		</div>
+	</footer>
+
+<section>
+    <ul class="sidebar">
+{#        <li class="qq">#}
+{#            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2023525077&site=qq&menu=yes"></a>#}
+{#        </li>#}
+        <li class="totop"></li>
+    </ul>
+</section>
+<script src="{% static 'js/selectUi.js' %}" type='text/javascript'></script>
+<script src="{% static 'js/deco-common.js' %}" type='text/javascript'></script>
+<script type="text/javascript" src="{% static 'js/plugins/laydate/laydate.js' %}"></script>
+<script src="{% static 'js/plugins/layer/layer.js' %}"></script>
+<script src="{% static 'js/plugins/queryCity/js/public.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/unslider.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/plugins/jquery.scrollLoading.js' %}"  type="text/javascript"></script>
+<script src="{% static 'js/deco-common.js' %}"  type="text/javascript"></script>
+{% block custom_js %}{% endblock %}
+</body>
+</html>

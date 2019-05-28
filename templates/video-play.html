@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %}视频信息 - 深圳大学慕课网{% endblock %}
+{% load staticfiles %}
+
+{% block custom_bread %}
+    <section>
+	<div class="wp">
+		<div class="crumbs">
+			<ul>
+{#				<li><a href="/">首页</a>></li>#}
+{#                <li><a href="{% url 'course:course_list' %}">公开课程</a>></li>#}
+{#				<li><a href="{% url 'course:course_detail' course.id %}">课程详情</a>></li>#}
+{#                <li>章节信息</li>#}
+			</ul>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/muke/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/muke/common-less.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/muke/course/learn-less.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aui.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mooc.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/muke/course/common-less.css' %}">
+    <link rel="stylesheet" type="text/css" href="{static '/css/video-js.min.css'}">
+   <style>
+    .video-js .vjs-big-play-button{
+        top: 50%;
+        left: 50%;
+    }
+</style>
+{#    <link rel="stylesheet" type="text/css" href="../css/video-js.min.css">#}
+{#<script src="../js/video.min.js" type="text/javascript"></script>#}
+{% endblock %}
+
+{% block custom_js %}
+<script src="{static '/js/video.min.js'}" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="main" style="margin-top: -100px">
+{# 视频的div#}
+  <div style="width:1200px;height:675px; margin-left: 34px">
+    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="1200"
+          poster="http://video-js.zencoder.com/oceans-clip.png"
+          data-setup="{}">
+        <source src="https://www.imooc.com/c45b2ce0-f4e1-4664-a4c4-c1027ac86c22.mp4" type='video/mp4'>
+    </video>
+</div>
+
+    <div class="course-info-main clearfix w has-progress">
+        <div class="info-bar clearfix">
+        <div class="content-wrap clearfix">
+            <div class="content">
+{#                <div class="mod-tab-menu">#}
+{#                    <ul class="course-menu clearfix">#}
+{#                        <li><a class="ui-tabs-active active" id="learnOn"  href="{% url 'course:course_info' course.id %}"><span></span></a></li>#}
+{#                        <li><a id="commentOn" class="" href="{% url 'course:course_comments' course.id %}"><span>评论</span></a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+                <div id="notice" class="clearfix">
+{#                    <div class="l"> <strong>课程公告:</strong> <a  href="javascript:void(0)">Spring的文档以及相关的jar文件已上传</a> </div>#}
+                         <div class="l"> <strong>课程须知:此教学内容仅适合没有任何编程基础的同学学习，大神请绕道。</strong></div>
+                </div>
+
+                <div class="mod-chapters">
+                    {% for chapter in course.get_course_chapter %}
+                    <div class="chapter chapter-active" >
+                        <h3>
+                            <strong><i class="state-expand"></i>{{ chapter.name }}</strong>
+                        </h3>
+                        <ul class="video">
+                            {% for video in chapter.get_chapter_video %}
+                            <li>
+                                <a target="_blank" href='{% url "course:video-play" video.id %}' class="J-media-item studyvideo">{{ video.name }} ({{ video.learn_minutes }}min)
+                                    <i class="study-state"></i>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+    </div>
+</div>
+</div>
+{% endblock %}
+
