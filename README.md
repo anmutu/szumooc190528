@@ -69,6 +69,13 @@ http://127.0.0.1:8000/xadmin/
 ```
 http://127.0.0.1:8000/course/info/1/
 ```
+---
+## 效果展示
+#### 管理后台效果图
+![](https://github.com/anmutu/szumooc190528/blob/master/static/img_projectdemo/admin.jpg)
+#### mooc平台效果图
+![](https://github.com/anmutu/szumooc190528/blob/master/static/img_projectdemo/mooc.jpg)
+
 
 
 
