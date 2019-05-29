@@ -5,8 +5,8 @@ from datetime import datetime
 # 课程表
 class Course(models.Model):
     name = models.CharField(max_length=30, default="",verbose_name=u"课程名称")
-    detail = models.CharField(max_length=300, default="",verbose_name=u"课程描述")
-    notice = models.CharField(default="", max_length=300, verbose_name=u"课程须知")
+    detail = models.TextField(max_length=300, default="",verbose_name=u"课程描述")
+    notice = models.TextField(default="", max_length=300, verbose_name=u"课程须知")
     # image = models.ImageField(upload_to="courses/%Y/%m", verbose_name=u"封面图", max_length=100)
     degree = models.CharField(verbose_name=u"难度",default=u"", choices=(("easy", "初级"), ("ordinary", "中级"), ("advanced", "高级")), max_length = 20)
     category = models.CharField(default=u"后端开发", max_length=20, verbose_name=u"课程类别")
