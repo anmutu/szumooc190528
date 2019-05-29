@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'course',
     'xadmin',
     'crispy_forms',
-    'user'
+    'user',
+    'captcha'
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+from django.forms.fields import Field
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

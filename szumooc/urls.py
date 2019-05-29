@@ -15,12 +15,21 @@ Including another URLconf
 """
 from django.urls import path
 from django.conf.urls import url, include
+from user.views import RegisterView,LoginView
 import xadmin
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
 
-    # 课程相关url配置
-   url(r'^course/', include(('course.urls', 'course'), namespace="course")),
-]
+    # 用户注册
+    url('^register/$', RegisterView.as_view(), name="register"),
 
+    # 用户登录
+    url('^login/$', LoginView.as_view(), name="login"),
+
+    # 验证码需要用到
+    url(r'^captcha/', include('captcha.urls')),
+
+    # 课程相关url配置
+    url(r'^course/', include(('course.urls', 'course'), namespace="course")),
+]
