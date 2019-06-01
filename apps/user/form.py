@@ -4,6 +4,7 @@ __bolg__ = 'www.cnblogs.com/anmutu;www.zmfei4.com;'
 __date__ = '2019/5/29 2:40'
 
 from django import forms
+from user.models import UserProfile
 
 
 class LoginForm(forms.Form):
@@ -16,4 +17,13 @@ class RegisterForm(forms.Form):
     password = forms.CharField(required=True, min_length=5)
 
 
+class UserInfoForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['nick_name', 'gender', 'birthday', 'address', 'mobile']
 
+
+class UploadImageForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['portrait']

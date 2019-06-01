@@ -30,6 +30,9 @@ urlpatterns = [
     # 验证码需要用到
     url(r'^captcha/', include('captcha.urls')),
 
-    # 课程相关url配置
+    # 课程相关url配置(分发到course下的urls.py里)
     url(r'^course/', include(('course.urls', 'course'), namespace="course")),
+
+    # 用户相关url配置(分发到user下的urls.py里)
+    url(r'^user/', include(('user.urls', 'user'), namespace="user")),
 ]
