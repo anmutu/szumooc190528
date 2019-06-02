@@ -54,12 +54,12 @@
         <div class="info-bar clearfix">
         <div class="content-wrap clearfix">
             <div class="content">
-{#                <div class="mod-tab-menu">#}
-{#                    <ul class="course-menu clearfix">#}
-{#                        <li><a class="ui-tabs-active active" id="learnOn"  href="{% url 'course:course_info' course.id %}"><span></span></a></li>#}
-{#                        <li><a id="commentOn" class="" href="{% url 'course:course_comments' course.id %}"><span>评论</span></a></li>#}
-{#                    </ul>#}
-{#                </div>#}
+               <div class="mod-tab-menu">
+                    <ul class="course-menu clearfix">
+                        <li><a class="ui-tabs-active active" id="learnOn"  href="{% url 'course:course_info' course.id %}"><span>章节</span></a></li>
+                        <li><a id="commentOn" class="" href="{% url 'course:course_comments' course.id %}"><span>评论</span></a></li>
+                    </ul>
+                </div>
                 <div id="notice" class="clearfix">
 {#                    <div class="l"> <strong>课程公告:</strong> <a  href="javascript:void(0)">Spring的文档以及相关的jar文件已上传</a> </div>#}
                          <div class="l"> <strong>课程须知:此教学内容仅适合没有任何编程基础的同学学习，大神请绕道。</strong></div>
