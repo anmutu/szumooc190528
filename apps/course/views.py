@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.generic.base import View
 from django.http import HttpResponse
 
-from .models import Course, Video
+from .models import Course, Video, Chapter
 from user.models import CourseComments
 
 
@@ -41,9 +41,13 @@ class GetCommentsView(View):
 
     def get(self, request, course_id):
         course = Course.objects.get(id=int(course_id))
+        # chapter = Chapter.objects.filter(course_id=course.id)
+        # video = Video.objects.filter(chapter_id=chapter.id)
         all_comments = CourseComments.objects.filter(course=course).order_by("-id")
         return render(request, "course-comment.html", {
             "course": course,
+            # "chapter": chapter,
+            # "video": video,
             "all_comments": all_comments
         })
 
