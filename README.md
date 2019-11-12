@@ -3,41 +3,40 @@
 ---
 ## 所需要的安装包
 #### 注意：因python使用的是3.7的版本，其对应的mysql的驱动是PyMySQL。
-1. backports.csv          1.0.7
-2. captcha                0.3
-3. certifi                2019.3.9
-4. chardet                3.0.4
-5. defusedxml             0.5.0
-6. diff-match-patch       20181111
-7. Django                 2.1.7
-8. django-crispy-forms    1.7.2
-9. django-formtools       2.1
-10. django-import-export   1.2.0
-11. django-pure-pagination 0.3.0
-12. django-ranged-response 0.2.0
-13. django-reversion       3.0.3
-14. django-simple-captcha  0.5.11
-15. et-xmlfile             1.0.1
-16. future                 0.17.1
-17. httplib2               0.9.2
-18. idna                   2.8
-19. jdcal                  1.4
-20. odfpy                  1.4.0
-21. openpyxl               2.6.2
-22. Pillow                 5.4.1
-23. pip                    19.0.3
-24. PyMySQL                0.9.3
-25. pytz                   2018.9
-26. PyYAML                 5.1
-27. requests               2.21.0
-28. setuptools             40.8.0
-29. six                    1.12.0
-30. tablib                 0.13.0
-31. urllib3                1.24.2
-32. wheel                  0.33.1
-33. xadmin                 2.0.1
-34. xlrd                   1.2.0
-35. xlwt                   1.3.0
+backports.csv==1.0.7
+captcha==0.3
+certifi==2019.3.9
+chardet==3.0.4
+defusedxml==0.5.0
+diff-match-patch==20181111
+Django==2.1.7
+django-crispy-forms==1.7.2
+django-formtools==2.1
+django-import-export==1.2.0
+django-pure-pagination==0.3.0
+django-ranged-response==0.2.0
+django-reversion==3.0.3
+django-simple-captcha==0.5.11
+et-xmlfile==1.0.1
+future==0.17.1
+gunicorn==19.9.0
+httplib2==0.9.2
+idna==2.8
+jdcal==1.4
+odfpy==1.4.0
+openpyxl==2.6.2
+Pillow==5.4.1
+PyMySQL==0.9.3
+pytz==2018.9
+PyYAML==5.1
+requests==2.21.0
+six==1.12.0
+tablib==0.13.0
+urllib3==1.24.2
+xadmin==2.0.1
+xlrd==1.2.0
+xlwt==1.3.0
+
 ---
 ## 如何run起来？
 1. 在本机的mysql里创建一个叫mooc的数据库，用户名和密码都是graduation。当然这个用户名或者密码都可以改成你自己设置的，如果改成你自己设置的则需要到settings.py里找到相应的位置改成你所设置的就可以了。
