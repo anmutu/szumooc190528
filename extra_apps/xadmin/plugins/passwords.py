@@ -1,7 +1,8 @@
 # coding=utf-8
 from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 from django.contrib.auth.tokens import default_token_generator
-from django.contrib.auth.views import password_reset_confirm
+# from django.contrib.auth.views import password_reset_confirm
+from django.contrib.auth.views import PasswordResetConfirmView
 from django.template.response import TemplateResponse
 from django.utils.translation import ugettext as _
 

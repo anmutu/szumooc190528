@@ -19,7 +19,7 @@ from user.views import RegisterView,LoginView
 import xadmin
 
 urlpatterns = [
-    path('xadmin/', xadmin.site.urls),
+     path('xadmin/', xadmin.site.urls),
 
     # 用户注册
     url('^register/$', RegisterView.as_view(), name="register"),

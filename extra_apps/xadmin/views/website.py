@@ -2,8 +2,9 @@ from __future__ import absolute_import
 from django.utils.translation import ugettext as _
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.views.decorators.cache import never_cache
-from django.contrib.auth.views import login
-from django.contrib.auth.views import logout
+# from django.contrib.auth.views import login
+# from django.contrib.auth.views import logout
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 
 from .base import BaseAdminView, filter_hook
@@ -58,7 +59,7 @@ class LoginView(BaseAdminView):
         })
         defaults = {
             'extra_context': context,
-            'current_app': self.admin_site.name,
+            # 'current_app': self.admin_site.name,
             'authentication_form': self.login_form or AdminAuthenticationForm,
             'template_name': self.login_template or 'xadmin/views/login.html',
         }
@@ -84,7 +85,7 @@ class LogoutView(BaseAdminView):
         context = self.get_context()
         defaults = {
             'extra_context': context,
-            'current_app': self.admin_site.name,
+            # 'current_app': self.admin_site.name,
             'template_name': self.logout_template or 'xadmin/views/logged_out.html',
         }
         if self.logout_template is not None:
