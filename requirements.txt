@@ -19,7 +19,7 @@ idna==2.8
 jdcal==1.4
 odfpy==1.4.0
 openpyxl==2.6.2
-Pillow==5.4.1
+Pillow==8.1.1
 PyMySQL==0.9.3
 pytz==2018.9
 PyYAML==5.1
